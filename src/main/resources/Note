@@ -1,0 +1,25 @@
+Eureka Client Oluşturma
+
+Eureka client oluşturmak için öncelikle yeni uygulamamız aşağıdaki bağımlılıkları eklememiz gerekmektedir.
+
+Şimdi ise gerekli uygulama ayarlarını application.properties dosyasına ekliyoruz. Dediğim gibi burada isterseniz yaml dosya formatını da kullabilirsiniz.
+
+
+
+
+Url için örnek link: http://admin:exampklejhasdjkhasdYUATAHkjsadkjasd8872KHUIAS@localhost:9999/eureka
+
+NOT: Kullanıcı adı ve parolayı değiştirmeyi unutmayın. Bağlantı hatası alırsınız diğer türlü.
+
+Son olarak ise, client için erekli olan @EnableDiscoveryClient anotasyonunu projenin spring başlatıcısına ekliyoruz.
+
+
+
+
+spring.cloud.config.uri: Config dosyalarını çekeceğimiz Config Server’in adresi.
+
+ApiGatewayApplication.java classımıza @EnableEurekaClient ve @EnableZuulProxy anotasyonlarımız ekliyoruz. 
+Böylelikle projemiz bir API gateway özelliği kazacanak ve yapılan istekleri Discovery Server’a kayıt yaptırmış servislere yönlendirebilecek.
+
+
+http://admin:admin@localhost:8761/eureka
